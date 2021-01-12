@@ -1,0 +1,64 @@
+{% extends 'shop/base.html'%}
+{% load static %}
+
+{% block title %}
+    detail
+{% endblock %}
+
+{% block content %}
+<div class="items">
+  <a class="back" href="{% url 'seller' %}">一覧へ</a>
+  <h1 class="text-center">Amazonの商品</h1>
+  <div class="container ">
+    <div class="row ">
+
+      {% for product in products %}
+      
+      <div class="col-3 text-center d-flex align-items-end">
+        <a href="{% url 'detail' product.product_id %}">
+          <img class="detail"  src="{{ product.pictureURL }}" alt=""/>
+          <h5>{{ product.product_name }}</h5>
+          <h6>{{ product.price }}円</h6>
+        </a>
+      </div>
+
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+<!--
+   <h1>Amazon</h1>
+      <br>
+      <table border="1">
+      <tr>
+        <th>商品名</th>
+        <th>価格</th>
+        <th>形</th>
+        <th>素材</th>
+        <th>方法</th>
+        <th>色</th>
+        <th>url</th>
+        <th>pictureURL</th>
+      </tr>
+
+      {% for product in products %}
+      <tr>
+        <td><a href="{% url 'detail' product.product_id %}">{{ product.product_name }}</a></td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.form }}</td>
+        <td>{{ product.mate }}</td>
+        <td>{{ product.method }}</td>
+        <td>{{ product.color }}</td>
+        <td>{{ product.URL }}</td>
+        <td>{{ product.pictureURL }}</td>
+      </tr>
+
+      {% endfor %}
+      </table>
+      <br>
+      <br>
+    <a href="{% url 'index' %}">一覧へ</a>
+-->
+{% endblock %}

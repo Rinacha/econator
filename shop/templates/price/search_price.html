@@ -1,0 +1,89 @@
+{% extends 'shop/base.html'%}
+{% load static %}
+
+{% block title %}
+    search_price
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="search_price">
+  <div>
+    <a class="back" href="{% url 'search' %}">戻る</a>
+    <h3 class="text-center">価格で探す</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-4 text-center how d-flex align-items-end">
+          <a href="{% url 'hund' %}">
+            <div>
+              <img src="{% static 'img/money_yen.png' %} ">
+              <h5>1000円以下</h5>              
+            </div>
+          </a>
+        </div>
+
+        <div class="col-4 text-center how d-flex align-items-end">
+          <a href="{% url 'two_hund' %}">
+            <div>
+              <img src="{% static 'img/money_yen.png' %} ">
+              <h5>1000円~2000円</h5>              
+            </div>
+          </a>
+        </div>
+
+        <div class="col-4 text-center how d-flex align-items-end">
+          <a href="{% url 'three_hund' %}">
+            <div>
+              <img src="{% static 'img/money_yen.png' %}  ">
+              <h5>2000円~3000円</h5>              
+            </div>
+          </a>
+        </div>  
+      </div>
+    </div>
+    
+
+    <div class="container">
+      <div class="row">
+      <div class="col-4 text-center how d-flex align-items-end">
+        <div>
+          <a href="{% url 'four_hund' %}">
+            <div>
+              <img src="{% static 'img/money_yen.png' %} ">
+              <h5>3000円~4000円</h5>            
+            </div>
+          </a>          
+        </div>
+
+      </div>
+
+      <div class="col-4 text-center how d-flex align-items-end">
+        <div>
+          <a href="{% url 'five_hund' %}">
+            <div>
+              <img src="{% static 'img/money_yen.png' %} " >
+              <h5>4000円~5000円</h5>            
+            </div>
+          </a>
+        </div>
+      </div>
+      
+      <div class="col-4 text-center how d-flex align-items-end">
+        <div>
+          <a href="{% url 'over' %}">
+            <div>
+              <img src="{% static 'img/money_yen.png' %} " >
+              <h5>5000円以上</h5>            
+            </div>
+          </a>
+        </div>
+      </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

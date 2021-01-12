@@ -1,0 +1,86 @@
+{% extends 'shop/base.html'%}
+{% load static %}
+
+{% block title %}
+    search
+{% endblock %}
+
+{% block content %}
+
+  <div class="search">
+    <div>
+      <h3 class="text-center">探し方を決めましょう</h3>
+      <div class="container">
+        <div class="row">
+          <div class="col-4 text-center how d-flex align-items-end">
+            <a href="{% url 'price' %}">
+              <div>
+                <img src="{% static 'img/money_yen.png' %} ">
+                <h5>価格で探す</h5>              
+              </div>
+            </a>
+          </div>
+
+          <div class="col-4 text-center how d-flex align-items-end">
+            <a href="{% url 'color' %}">
+              <div>
+                <img src="{% static 'img/color.png' %}">
+                <h5>色で探す</h5>              
+              </div>
+            </a>
+          </div>
+
+          <div class="col-4 text-center how d-flex align-items-end">
+            <a href="{% url 'form' %}">
+              <div>
+                <img src="{% static 'img/form.jpg' %} ">
+                <h5>形で探す</h5>              
+              </div>
+            </a>
+          </div>  
+        </div>
+      </div>
+      
+
+      <div class="container">
+        <div class="row">
+        <div class="col-4 text-center how d-flex align-items-end">
+          <div>
+            <a href="{% url 'seller' %}">
+              <div>
+                <img src="{% static 'img/amayhorak.jpg' %}">
+                <h5>販売サイトで探す</h5>            
+              </div>
+            </a>          
+          </div>
+
+        </div>
+
+        <div class="col-4 text-center how d-flex align-items-end">
+          <div>
+            <a href="{% url 'mate' %}">
+              <div>
+                <img src="{% static 'img/material.jpg' %}" >
+                <h5>素材で探す</h5>            
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-4 text-center how d-flex align-items-end">
+          <div>
+            <a href="{% url 'method' %}">
+              <div>
+                <img src="{% static 'img/oritatami.jpg' %}">
+                <h5>保管方法で探す</h5>            
+              </div>
+            </a>
+          </div>
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'shop/base.html'%}
+{% load static %}
+
+{% block title %}
+    detail
+{% endblock %}
+
+{% block content %}
+
+
+<div class="item_detail">
+  <a class="back" href="{{request.META.HTTP_REFERER}}">一覧へ</a>
+  <div class="container detail_info">
+    <div class="row ">
+      <div class="col-4 mx-auto text-center">
+        <img src="{{ product.pictureURL }}">
+      </div>
+      <div class="col-5">
+        <h1>
+          {{ product.product_name }}
+        </h1>
+        <h3>
+          価格　 ：  ￥{{ product.price }}
+        </h3>
+        <div class="detail_text">
+          <h4>
+            商品詳細
+          </h4>
+          <hr>
+          <h5>
+            色　　 ：   <div class="detail_color" style="background-color: {{ product.color }};border: solid 1px #707070;" ></div>
+          </h5>
+          <h5>
+            形　　 ：  {{ product.form }}
+          </h5>
+          <h5>
+            素材　 ：  {{ product.mate }}
+          </h5>
+          <h5>
+            保管法 ：  {{ product.method }}
+          </h5>          
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="container sell_button">
+    <div class="col-5 mx-auto">
+        <a class="button sell" href="{{ product.URL }}" target=”_blank”> <h4>購入はこちら</h4></a>
+    </div>
+</div>
+</div>
+
+<!--
+    <h1>データの詳細</h1>
+      <br>
+      <table border="1">
+      <div>
+        <div>
+          <div>
+              <img src="{% if product.pictureURL %}{{ product.pictureURL }}{% else %}{% static 'img/NoImage.png' %}{% endif %}" width="200" height="200">
+          </div>
+          <h1><h2>商品名</h2></h1>
+          <p><h2>値段</h2>{{ product.price }}円</p>
+          <div>
+            <h2>商品説明</h2>
+            <p>形　　　　：{{ product.form }}</p>
+            <p>素材　　　：{{ product.mate }}</p>
+            <p>しまう方法：{{ product.method }}</p>
+            <p>色　　　　：{{ product.color }}</p>
+            <p>URL　　　：{{ product.URL }}</p>
+            <p>画像URL  :{{ product.pictureURL }}</p>
+          </div>
+        </div>
+      </div>
+
+      </table>
+    <a href="{% url 'index' %}">一覧へ</a>
+  
+-->
+{% endblock %}

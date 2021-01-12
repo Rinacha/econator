@@ -1,0 +1,93 @@
+{% extends 'shop/base.html'%}
+{% load static %}
+
+{% block title %}
+    search_material
+{% endblock %}
+
+{% block content %}
+
+<div class="search_mate">
+  <div>
+    <a class="back" href="{% url 'search' %}">戻る</a>
+    <h3 class="text-center">素材で探す</h3>
+    <div class="container">
+      <div class="row">
+
+
+        <div class="col-4 text-center how d-flex align-items-end">
+          <a href="{% url 'nylone' %}">
+            <div>
+              <img class="search_img" src="{% static 'img/nylone.jpg' %} " width="200" height="200">
+              <p>ナイロン</p>
+            </div>
+          </a>
+        </div>
+
+ 
+ 
+        <div class="col-4 text-center how d-flex align-items-end">
+          <div>
+            <a href="{% url 'pori' %}">
+              <div>
+                <img class="search_img" src="{% static 'img/asa.jpg' %} "  width="200" height="200">
+                <p>ポリエステル</p>
+              </div>
+            </a>          
+          </div>
+
+        </div>
+
+        <div class="col-4 text-center how d-flex align-items-end">
+          <div>
+            <a href="{% url 'unknown' %}">
+              <div>
+                <img class="search_img" src="{% static 'img/wata.jpg' %} "  width="200" height="200">
+                <p>その他の素材</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--
+<div>
+  <div>
+    <h3>素材で探す</h3>
+    <div>
+      <a href="{% url 'jusi' %}"><img src="{% static 'img/polyester.jpg' %} " width="200" height="200"></a>
+      <p>EVA樹脂</p>
+    </div>
+    <div>
+      <a href="{% url 'nylone' %}"><img src="{% static 'img/nylone.jpg' %} " width="200" height="200"></a>
+      <p>ナイロン</p>
+    </div>
+    <div>
+      <a href="{% url 'net' %}"><img src="{% static 'img/asa.jpg' %} " width="200" height="200"></a>
+      <p>ネットクロス</p>
+    </div>
+    
+    <div>
+      <a href="{% url 'pori' %}"><img src="{% static 'img/asa.jpg' %} " width="200" height="200"></a>
+      <p>ポリエステル</p>
+    </div>
+    <div>
+      <a href="{% url 'unknown' %}"><img src="{% static 'img/wata.jpg' %} " width="200" height="200"></a>
+      <p>不明</p>
+    </div>
+  </div>
+
+    {% for product in products %}
+    <tr>
+      <td>{{ product.mate }}</td>
+      <br>
+    </tr>
+    {% endfor %}
+
+</div>
+-->
+{% endblock %}

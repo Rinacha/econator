@@ -1,0 +1,41 @@
+{% extends 'shop/base.html'%}
+{% load static %}
+
+{% block title %}
+    search_hanbaimoto
+{% endblock %}
+
+{% block content %}
+
+<div class="search_seller">
+  <div>
+    <a class="back" href="{% url 'search' %}">戻る</a>
+    <h3 class="text-center">販売サイトで探す</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-4 text-center">
+          <a href="{% url 'amazon' %}">
+            <img src="{% static 'img/amazon.jpg' %} " width="200" height="200">
+            <h3>Amazon</h3>        
+          </a>
+        </div>
+        <div class="col-4 text-center">
+          <a href="{% url 'rakuten' %}">
+            <img src="{% static 'img/rakuten.png' %} " width="200" height="200">
+            <h3>Rakuten</h3>
+          </a>
+        </div>
+        <div class="col-4 text-center">
+          <a href="{% url 'yahoo' %}">
+            <img src="{% static 'img/yahoo.png' %} " width="200" height="200">
+            <h3>Yahoo</h3>
+          </a>
+        </div>          
+      </div>
+    
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'shop/base.html'%}
+{% load static %}
+
+{% block title %}
+    search_color
+{% endblock %}
+
+{% block content %}
+  <div class="search_color">
+    <div>
+      <a class="back" href="{% url 'search' %}">戻る</a>
+      <h3 class="text-center">色で探す</h3>
+      <div class="container">
+        <div class="row">
+          <div class="col-4 text-center color ">
+            <a href="{% url 'color_black' %}">
+              <div class="colors box mx-auto" style="background-color: black;"></div>
+              <h3 >黒</h3>
+            </a>
+          </div>
+          <div class="col-4 text-center color">
+            <a href="{% url 'color_blue' %}">
+              <div class="colors box mx-auto" style="background-color: blue;"></div>
+              <h3>青</h3>
+            </a>
+          </div>
+          <div class="col-4 text-center color">
+            <a href="{% url 'color_gray' %}">
+              <div class="colors box mx-auto" style="background-color: gray;"></div>
+              <h3>灰</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-4 text-center color">
+            <a href="{% url 'color_green' %}">
+              <div class="colors box mx-auto" style="background-color: green;"></div>
+              <h3>緑</h3>
+            </a>
+          </div>
+          <div class="col-4 text-center color">
+            <a href="{% url 'color_red' %}">
+              <div class="colors box mx-auto" style="background-color: red;"></div>
+              <h3>赤</h3>
+            </a>
+          </div>
+          <div class="col-4 text-center color">
+            <a href="{% url 'color_white' %}">
+              <div class="colors box mx-auto" style="background-color: white; border: solid 2px #707070;"></div>
+              <h3>白</h3>
+            </a>
+          </div>
+        </div>
+
+      </div>    
+      <div class="container">
+        <div class="row">
+          <div class="col-4  text-center color">
+            <a href="{% url 'color_yellow' %}">
+              <div class="colors box mx-auto" style="background-color: yellow;"></div>
+              <h3>黄</h3>
+            </a>
+          </div> 
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}

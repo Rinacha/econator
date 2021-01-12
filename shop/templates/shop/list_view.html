@@ -1,0 +1,29 @@
+{% extends 'shop/base.html'%}
+{% load static %}
+
+{% block title %}
+    detail
+{% endblock %}
+
+{% block content %}
+
+    <h1>データの詳細</h1>
+      <br>
+      <table border="1">
+      <tr>
+        <th>商品コード</th>
+        <th>商品名</th>
+        <th>価格</th>
+      </re>
+      {% for product in products %}
+      <tr>
+        <td>{{ product.product_id }}</td>
+        <td><a href="{% url 'detail' product.product_id %}">{{ product.product_name }}</a></td>
+        <td>{{ product.price }}</td>
+      </tr>
+
+      {% endfor %}
+      </table>
+    <a href="{% url 'index' %}">一覧へ</a>
+
+{% endblock %}

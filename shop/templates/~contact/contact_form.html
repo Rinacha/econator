@@ -1,0 +1,21 @@
+{% extends 'shop/base.html'%}
+{% load static %}
+
+{% block title %}
+    contact_form
+{% endblock %}
+
+{% block content %}
+    <center>
+    <h1>入力フォーム</h1><hr><br>
+
+    <!--追記-->
+    <form action="{% url 'contact_form' %}" method="post">
+        {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table><br>
+        <input type="submit" value="送信">
+    </form>
+    </center>
+{% endblock %}

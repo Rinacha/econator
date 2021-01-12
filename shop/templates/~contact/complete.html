@@ -1,0 +1,15 @@
+{% extends 'shop/base.html'%}
+{% load static %}
+
+{% block title %}
+    contact
+{% endblock %}
+
+{% block content %}
+    <center>
+    <h1>送信完了</h1>
+    <a href="{% url 'contact:index' %}">
+    <p>トップへ</p>
+    </a>
+    </center>
+{% endblock %}

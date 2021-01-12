@@ -1,0 +1,71 @@
+{% extends 'shop/base.html'%}
+{% load static %}
+
+{% block title %}
+    search_form
+{% endblock %}
+
+{% block content %}
+<div class="search_form">
+  <div>
+    <a class="back" href="{% url 'search' %}">戻る</a>
+    <h3 class="text-center">形で探す</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-4 text-center ">
+          <a href="{% url 'carry' %}">
+            <img src="{% static 'img/carry.jpg' %} " width="200" height="200">
+            <p>キャリーバッグ</p>
+          </a>
+          
+        </div>
+        <div class="col-4 text-center">
+          <a href="{% url 'shoulder' %}"><img src="{% static 'img/shoulder.jpg' %} " width="200" height="200">
+            <p>ショルダーバッグ</p>
+          </a>
+          
+        </div>
+        <div class="col-4 text-center">
+          <a href="{% url 'toto' %}"><img src="{% static 'img/toto.jpg' %} " width="200" height="200"><p>トートバッグ</p>
+          </a>
+          
+        </div>
+        <div class="col-4 text-center">
+          <a href="{% url 'drop' %}"><img src="{% static 'img/drop.jpg' %} " width="200" height="200">
+            <p>ドロップ</p>
+          </a>
+        </div>
+        <div class="col-4 text-center">
+          <a href="{% url 'net' %}"><img src="{% static 'img/net.jpg' %} " width="200" height="200">
+            <p>ネットクロス</p>
+          </a>
+        </div>
+        
+        <div class="col-4 text-center">
+          <a href="{% url 'bag' %}"><img src="{% static 'img/totobag.jpg' %} " width="200" height="200">
+            <p>バッグ</p>
+          </a>
+        </div>
+        <div class="col-4 text-center">
+          <a href="{% url 'ryukku' %}"><img src="{% static 'img/backpack.jpg' %} " width="200" height="200">
+            <p>リュック</p>
+          </a>
+        </div>
+        <div class="col-4 text-center">
+          <a href="{% url 'reji' %}"><img src="{% static 'img/regibukuro.jpg' %} " width="200" height="200">
+            <p>レジ袋</p>
+          </a>
+        </div>
+        <div class="col-4 text-center">
+          <a href="{% url 'reji_bag' %}"><img src="{% static 'img/regikago.jpg' %} " width="200" height="200">
+            <p>レジかご</p>
+          </a>
+        </div>      
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+{% endblock %}

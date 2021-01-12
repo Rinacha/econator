@@ -1,0 +1,32 @@
+{% extends 'shop/base.html'%}
+{% load static %}
+
+{% block title %}
+    detail
+{% endblock %}
+
+{% block content %}
+
+<div class="items">
+  <a class="back" href="{% url 'color' %}">一覧へ</a>
+  <h1 class="text-center">緑色の商品</h1>
+  <div class="container ">
+    <div class="row ">
+
+      {% for product in products %}
+      
+      <div class="col-3 text-center d-flex align-items-end">
+        <a href="{% url 'detail' product.product_id %}">
+          <img class="detail"  src="{{ product.pictureURL }}" alt=""/>
+          <h5>{{ product.product_name }}</h5>
+          <h6>{{ product.price }}円</h6>
+        </a>
+      </div>
+
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>Econator</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css'%}">
+    {% block extrahead %}
+    {% endblock %}
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>      
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-9">
+              <a class="title " href="{% url 'index' %}">
+                <h1 class="d-flex align-items-end"><img src="{% static 'img/rogo.png' %}" width="60" height="60"><span class="eco" >Eco</span>nator</h1>エコネーター
+              </a>
+            </div>
+            <div class="col-1 d-flex align-items-end under ">
+              <a href="{% url 'search' %}">search</a>
+            </div>
+            <div class="col-1 d-flex align-items-end under ">
+              <a href="{% url 'explain' %}">about</a>              
+            </div>
+            <div class="col-1 d-flex align-items-end under ">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdCI9_8G7KppSdZAc7N7RBo8oCQNWuC-SLFLph6SWpoYK2Ggw/viewform"%> contact </a> 
+            </div>
+            
+          </div>
+        </div>
+      </header>
+
+
+      {% block content %}
+      {% endblock %}
+
+
+      <footer class="">
+        <div class="container float-left">
+          <a class="title under" href="{% url 'index' %}">
+            <img src="{% static 'img/rogo.png' %}" width="60" height="60">
+            <h1><span class="eco2">Eco</span>nator</h1>
+            <p>エコネーター</p>
+          </a>
+        </div>
+        <div class="container float-left">
+          <a class="col-2" href="{% url 'search' %}">search</a>
+          <a class="col-2" href="{% url 'explain' %}">about</a>
+          <a class="col-2" href="https://docs.google.com/forms/d/e/1FAIpQLSfF1Lb3P_z1aacDrKOIbC42VYD_rTpaSjvLf3lVTxOiabxM3g/viewform"%> survey </a>
+          <a class="col-2" href="https://docs.google.com/forms/d/e/1FAIpQLSdCI9_8G7KppSdZAc7N7RBo8oCQNWuC-SLFLph6SWpoYK2Ggw/viewform"%> contact </a>
+        </div>
+      </footer>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %}
+    tytle of this html
+{% endblock %}
+
+{% block content %}
+    <h1>登録</h1>
+    <form action="{% url 'create' %}" method="POST" >
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="タイトルを入力" />
+        <br />
+        <textarea type="text" name="detail" placeholder="内容を入力"></textarea>
+        <br />
+        <input type="text" name="name" id="name" placeholder="名前を入力" value="{{ shop.named }}">
+        <br />
+        <input type="date" name="created" placeholder="日付" />
+        <br />
+        <input type="submit" value="登録する" />
+    </form>
+    <a href="">変更へ</a>
+    <br />
+    <a href="{% url 'index' %}">一覧へ</a>
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'shop/base.html'%}
+{% load static %}
+
+{% block title %}
+<style>
+ .slide {
+   position:relative;
+   height:400px;
+  }
+  .slide img {
+    position:absolute;
+    opacity:0;
+    transition:all 1s ease-in-out;
+    height:100%;
+    object-fit:contain;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="index">
+        <div class="container info">
+            <div class="row">
+                <div class="col-8 info_text">
+                    <h1><span class="eco" >Eco</span>natorとは</h1>
+                    <p>このサイトはエコバッグを提案するサイトです。<br>
+                        私達は海洋問題の1つである、プラスチックごみ問題を解決を助けるために作成しました。<br>
+                        少しでも環境に配慮したいが、どのようなエコバッグを使用すれば良いかわからない人におすすめのサイトです。
+                    </p>        
+                </div>
+                <div class="col4">
+                    <div class="slide">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71qUwJ-pRbL._AC_UY695_.jpg" width="170" height="170" />                             
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51QBv20pFPL._AC_SX679_.jpg" width="170" height="170" />
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/61VmV7P4fZL._AC_UY695_.jpg" width="170" height="170" />
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/81Ym3tWdThL._AC_UX679_.jpg" width="170" height="170" />
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/61PxKAprCeL._AC_UY695_.jpg" width="170" height="170" />
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71JGpAXDgPL._AC_UX695_.jpg" width="170" height="170" />
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71NWC8SJKBL._AC_SX679_.jpg" width="170" height="170" />
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/41lU82ninLL._AC_.jpg" width="170" height="170" />
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71R7kZLuDuL._AC_UY675_.jpg" width="170" height="170" />
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/61C-sCPhYWL._AC_UY675_.jpg" width="170" height="170" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <style>
+            .slide {
+                position:relative;
+                height:400px;
+            }
+            .slide img {
+                position:absolute;
+                opacity:0;
+                transition:all 1s ease-in-out;
+                height:100%;
+                object-fit:contain;
+            }
+        </style>
+
+        <script>
+        window.addEventListener('load', function () {
+            viewSlide('.slide img');
+        });
+        function viewSlide(className, slideNo = -1) {
+            let imgArray = document.querySelectorAll(className);
+                if (slideNo >= 0) {
+                    //初回以外は現在のスライドを消す
+                    imgArray[slideNo].style.opacity = 0;
+                }
+                slideNo++;
+                if (slideNo >= imgArray.length) {
+                    slideNo = 0; //次のスライドがなければ最初のスライドへ戻る
+                }
+                imgArray[slideNo].style.opacity = 1;
+                setTimeout(function(){viewSlide(className, slideNo);}, 2000);
+            }
+    </script>
+
+
+    <div class="index">
+        <div class="container">
+            <div class="col-5 mx-auto">
+                <a class="button" href="{% url 'search' %}"> <h4>マイバックを探しに行く</h4></a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+{% endblock %}

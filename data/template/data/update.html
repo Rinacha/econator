@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %}
+    detail
+{% endblock %}
+
+{% block content %}
+
+    <h1>データの更新</h1>
+        <form action="{% url 'update' shop.id %}" method="POST">
+        {% csrf_token %}
+           <input type="text" name="title" id="title" placeholder="タイトルを入力" value="{{ shop.title }}">
+           <br />
+           <textarea name="detail" id="detail" placeholder="内容を入力">{{ shop.detail }}</textarea>
+           <br />
+           <input type="text" name="name" id="name" placeholder="名前を入力" value="{{ shop.named }}">
+           <br />
+           <input type="date" name="created" id="created" placeholder="日付" value="{{ shop.created | date:'Y-m-d' }}" />
+           <br />
+           <button type="submit">登録する</button>
+        </form>
+        <a href="{% url 'index' %}">一覧へ</a>
+
+{% endblock %}

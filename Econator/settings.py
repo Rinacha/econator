@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'Econator.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'econator_sql.sqlite3',
     }
 }
 
@@ -125,3 +125,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+# メールサーバー用
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'domybest.r.tkskt@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
